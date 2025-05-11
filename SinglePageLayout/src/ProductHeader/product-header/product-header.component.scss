@@ -2,74 +2,125 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: space-between;
+}
 
-  .product-image {
-    max-width: 300px;
-    border-radius: 12px;
-  }
+.product-image {
+  max-width: 300px;
+  border-radius: 12px;
+}
 
-  .color-options{
-    margin-top: 50px;
-    margin-left: -350px;
-  }
-  .btn {
-    padding: 10px 30px;
-    border-radius: 50px;
-    /* Oval shape */
-    background-color: black;
-    /* Black background */
-    color: white;
-    /* White text */
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
+.color-options,
+.storage-options {
+  display: flex;
+  flex-wrap: wrap;  /* Ensure buttons wrap in mobile view */
+  gap: 0.5rem;  /* Adjust gap between buttons */
+  justify-content: flex-start;  /* Align buttons to the start */
+  margin-top: 20px;
+  margin-left: 0;
+  width: 100%;  /* Ensure each set occupies full width */
+}
 
-  .btn:hover {
-    background-color: #222;
-    /* Slightly lighter on hover */
-    transform: scale(1.05);
-    /* Optional zoom effect */
-  }
+.btn {
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 100px;  /* Ensure buttons have a minimum width */
+  text-align: center;  /* Center text inside the button */
+}
 
+.btn:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
 
+.default-selected {
+  background-color: black;
+  color: white;
+}
+
+.white-btn {
+  background-color: white;
+  color: black;
 }
 
 .product-details {
   flex: 1;
   display: flex;
   flex-direction: column;
-
-  h1 {
-    margin-bottom: 0.5rem;
-  }
-
-  .rating {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .description,
-  .price-range {
-    font-size: small;
-    margin-bottom: 0.75rem;
-  }
-
-  .filters {
-    display: flex;
-    gap: 1rem;
-
-    label {
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
-  }
+  margin-left: 0;  /* Remove left margin to ensure it doesn't shift */
+  margin-top: 20px;
 }
 
+h1 {
+  margin-bottom: 0.5rem;
+}
 
+.rating {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.description,
+.price-range {
+  font-size: small;
+  margin-bottom: 0.75rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;  /* Allow filters to wrap in smaller screens */
+}
+
+label {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Mobile view adjustments */
 @media (max-width: 768px) {
   .product-header {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image {
+    max-width: 80%;
+    margin-bottom: 1rem;  /* Add spacing between image and text */
+  }
+
+  .color-options,
+  .storage-options {
+    justify-content: center;  /* Center buttons in mobile view */
+    width: 100%;  /* Make sure each set takes full width */
+  }
+
+  .btn {
+    width: auto;  /* Allow buttons to adjust width */
+    min-width: 80px;  /* Minimum button size */
+    padding: 8px 20px;  /* Adjust padding for smaller screens */
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;  /* Make sure filters take full width */
+  }
+
+  /* Ensure storage options (like 1TB) and color options (like All) are stacked on top of each other on small screens */
+  .storage-options {
+    margin-bottom: 20px; /* Ensure a space between storage options and color options */
+  }
+
+  .product-details {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
   }
 }

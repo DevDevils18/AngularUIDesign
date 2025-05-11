@@ -15,5 +15,11 @@ import { ImageSidebarComponent } from "../IphoneImageSideBar/image-sidebar/image
   imports: [CommonModule, ProductDetailsComponent, ProductHeaderComponent, OfferListComponent, ImageSidebarComponent]
 })
 export class AppComponent {
+  activeIndex: number = 0;
   title = 'SinglePageLayout';
+
+  updateActiveIndex(index: number) {
+    this.activeIndex = index;
+    console.log('Active Index from Product Details:', this.activeIndex);  // You can use it for other logic
+  }
 }

@@ -18,7 +18,10 @@
         <label *ngFor="let option of product.storageOptions; let i = index">
           <button
             class="btn"
-            [ngClass]="{ 'default-selected': i === selectedStorageIndex, 'white-btn': i !== selectedStorageIndex }"
+            [ngClass]="{ 
+              'default-selected': i === 1, 
+              'white-btn': i !== 1
+            }"
             (click)="selectStorage(i)">
             {{ option }}
           </button>
@@ -30,7 +33,10 @@
         <label *ngFor="let color of product.colorOptions; let i = index">
           <button
             class="btn"
-            [ngClass]="{ 'default-selected': i === selectedColorIndex, 'white-btn': i !== selectedColorIndex }"
+            [ngClass]="{ 
+              'default-selected': i === 0, 
+              'white-btn': i !== 0 
+            }"
             (click)="selectColor(i)">
             {{ color }}
           </button>

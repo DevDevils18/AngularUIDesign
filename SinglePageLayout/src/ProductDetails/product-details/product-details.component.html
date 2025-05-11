@@ -1,12 +1,7 @@
-<!-- ✅ Only render tabs in the browser -->
 <ng-container *ngIf="isBrowser">
   <div class="tabs-container">
     <ul class="tab-headers">
-      <li
-        *ngFor="let tab of tabs; index as i"
-        [class.active]="i === activeIndex()"
-        (click)="setActive(i)"
-      >
+      <li *ngFor="let tab of tabs; index as i" [class.active]="i === activeIndex()" (click)="setActive(i)">
         {{ tab.title }}
       </li>
     </ul>
@@ -15,5 +10,5 @@
     </div>
   </div>
   <!-- Insert shipping options component right after filters -->
-    <app-shippingoption></app-shippingoption>
+  <app-shippingoption *ngIf="activeIndex() === 0"></app-shippingoption>
 </ng-container>

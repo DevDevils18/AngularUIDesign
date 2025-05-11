@@ -7,7 +7,7 @@
   </div>
 
   <!-- Other sections below as normal -->
-  <app-product-details></app-product-details>
-  <app-offer-list></app-offer-list>
+  <app-product-details (activeIndexChange)="updateActiveIndex($event)"></app-product-details>
+  <app-offer-list *ngIf="activeIndex === 0"></app-offer-list>
 
 </div>
