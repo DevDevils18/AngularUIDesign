@@ -18,7 +18,7 @@ allImages: string[] = [
     'assets/Iphone16Pro5.jpeg',
   ];
 
-  visibleCount = 3; // initially show 3
+  visibleCount = 3; // initially show 3 images
   get visibleImages() {
     return this.allImages.slice(0, this.visibleCount);
   }
