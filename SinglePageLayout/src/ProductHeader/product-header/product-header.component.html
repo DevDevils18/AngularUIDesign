@@ -1,0 +1,22 @@
+<div class="product-header">
+  <img [src]="product.imageUrl" alt="iPhone 16 Pro Max" class="product-image" />
+  <div class="product-details">
+    <h1>{{ product.name }}</h1>
+    <p class="rating">⭐ {{ product.rating }}</p>
+    <p class="description">{{ product.description }}</p>
+    <p class="price-range">Compare prices from SEK {{ product.priceRange.min }} to SEK {{ product.priceRange.max }}</p>
+    <div class="filters">
+      <div class="storage-options">
+        <label *ngFor="let option of product.storageOptions">
+          <!-- <input type="button" name="storage" /> {{ option }} -->
+           <button class="btn">{{ option }}</button>
+        </label>
+      </div>
+      <div class="color-options">
+        <label *ngFor="let color of product.colorOptions">
+          <input type="radio" name="color" /> {{ color }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
