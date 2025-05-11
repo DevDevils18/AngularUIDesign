@@ -1,0 +1,46 @@
+.tabs-container {
+  font-family: Arial, sans-serif;
+
+  .tab-headers {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 2px solid #ccc;
+    overflow-x: auto;
+
+    li {
+      padding: 1rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s;
+
+      &.active {
+        border-bottom-color: #007bff;
+        font-weight: bold;
+        color: #007bff;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+}
+
+// Responsive: Stack tabs vertically on smaller screens
+@media (max-width: 600px) {
+  .tab-headers {
+    flex-direction: column;
+
+    li {
+      border-bottom: 1px solid #ccc;
+
+      &.active {
+        border-bottom-color: transparent;
+        border-left: 4px solid #007bff;
+      }
+    }
+  }
+}
