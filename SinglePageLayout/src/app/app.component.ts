@@ -20,6 +20,6 @@ export class AppComponent {
 
   updateActiveIndex(index: number) {
     this.activeIndex = index;
-    console.log('Active Index from Product Details:', this.activeIndex);  // You can use it for other logic
+    console.log('Active Index from Product Details:', this.activeIndex);
   }
 }

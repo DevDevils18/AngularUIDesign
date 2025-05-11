@@ -20,8 +20,8 @@ export class ProductHeaderComponent {
   };
 
   // Default selected indices for storage and color options
-  selectedStorageIndex: number = 1; // Default to '256GB'
-  selectedColorIndex: number = 0; // Default to 'All'
+  selectedStorageIndex: number = 1; 
+  selectedColorIndex: number = 0; 
 
   // Method to select a storage option
   selectStorage(index: number) {

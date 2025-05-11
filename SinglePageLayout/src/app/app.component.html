@@ -5,8 +5,6 @@
     <app-image-sidebar></app-image-sidebar>
     <app-product-header></app-product-header>
   </div>
-
-  <!-- Other sections below as normal -->
   <app-product-details (activeIndexChange)="updateActiveIndex($event)"></app-product-details>
   <app-offer-list *ngIf="activeIndex === 0"></app-offer-list>
 
