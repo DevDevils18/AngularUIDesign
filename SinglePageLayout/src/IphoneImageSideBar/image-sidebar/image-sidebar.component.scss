@@ -1,0 +1,26 @@
+.sidebar {
+  width: 100px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.image-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.show-more-button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #ddd;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -1,6 +1,13 @@
-
 <div class="container">
-<app-product-header></app-product-header>
-<app-product-details></app-product-details>
-<app-offer-list></app-offer-list>
+
+  <!-- Header + Sidebar side-by-side -->
+  <div class="header-layout">
+    <app-image-sidebar></app-image-sidebar>
+    <app-product-header></app-product-header>
+  </div>
+
+  <!-- Other sections below as normal -->
+  <app-product-details (activeIndexChange)="updateActiveIndex($event)"></app-product-details>
+  <app-offer-list *ngIf="activeIndex === 0"></app-offer-list>
+
 </div>

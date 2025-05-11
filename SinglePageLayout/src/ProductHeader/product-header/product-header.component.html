@@ -3,19 +3,43 @@
   <div class="product-details">
     <h1>{{ product.name }}</h1>
     <p class="rating">
-      <i class="fas fa-star"></i>&nbsp;{{ product.rating }} &nbsp; | &nbsp;<i class="fa-solid fa-bell"></i> &nbsp; Monitor Price &nbsp;  | &nbsp; <i class="fa-solid fa-scale-balanced"></i>  &nbsp; Compare
+      <i class="fas fa-star"></i>&nbsp;{{ product.rating }} &nbsp; | &nbsp;
+      <i class="fa-solid fa-bell"></i> &nbsp; Monitor Price &nbsp; | &nbsp;
+      <i class="fa-solid fa-scale-balanced"></i> &nbsp; Compare
     </p>
     <p class="description">{{ product.description }}</p>
-    <p class="price-range">Compare prices from SEK {{ product.priceRange.min }} to SEK {{ product.priceRange.max }}</p>
+    <p class="price-range">
+      Compare prices from SEK {{ product.priceRange.min }} to SEK {{ product.priceRange.max }}
+    </p>
+
     <div class="filters">
+      <!-- Storage Options -->
       <div class="storage-options">
-        <label *ngFor="let option of product.storageOptions">
-          <button class="btn">{{ option }}</button>
+        <label *ngFor="let option of product.storageOptions; let i = index">
+          <button
+            class="btn"
+            [ngClass]="{ 
+              'default-selected': i === 1, 
+              'white-btn': i !== 1
+            }"
+            (click)="selectStorage(i)">
+            {{ option }}
+          </button>
         </label>
       </div>
+
+      <!-- Color Options -->
       <div class="color-options">
-        <label *ngFor="let color of product.colorOptions">
-          <button class="btn"> {{ color }} </button>
+        <label *ngFor="let color of product.colorOptions; let i = index">
+          <button
+            class="btn"
+            [ngClass]="{ 
+              'default-selected': i === 0, 
+              'white-btn': i !== 0 
+            }"
+            (click)="selectColor(i)">
+            {{ color }}
+          </button>
         </label>
       </div>
     </div>
