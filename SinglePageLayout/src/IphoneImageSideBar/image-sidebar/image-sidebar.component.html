@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <div class="image-list">
+    <ng-container *ngFor="let image of visibleImages">
+      <img [src]="image" class="sidebar-image" />
+    </ng-container>
+  </div>
+
+  <button *ngIf="hasMoreImages" (click)="showMore()" class="show-more-button">
+    +
+  </button>
+</div>

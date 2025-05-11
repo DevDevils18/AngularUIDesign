@@ -1,11 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import {CommonModule, isPlatformBrowser} from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
+import { ShippingoptionComponent } from "../../ShippingOptions/shippingoption/shippingoption.component";
 
 @Component({
   selector: 'app-product-details',
    standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ShippingoptionComponent],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
